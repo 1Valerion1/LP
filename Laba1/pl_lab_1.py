@@ -107,4 +107,4 @@ class NewsScraper:
 
 urls = ['https://www.riatomsk.ru/', 'https://www.politico.com/','https://ixbt.games/news/']
 news_scraper = NewsScraper(urls)
-news_scraper.loop_scraping(12)
+news_scraper.loop_scraping(900) 
