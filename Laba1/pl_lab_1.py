@@ -10,7 +10,7 @@ class NewsScraper:
         self.news_counts = {url: 0 for url in urls}
         self.visited_urls = set()
         self.news_queue = Queue()
-               
+
     def scrape_politico(self, url):
         response = requests.get(url)
         if response.status_code == 200:
@@ -79,6 +79,7 @@ class NewsScraper:
             while True:
                 self.start_scraping()
                 time.sleep(interval)
+            
         except KeyboardInterrupt:
             print("Scraping stopped by user.")
 
@@ -107,4 +108,5 @@ class NewsScraper:
 
 urls = ['https://www.riatomsk.ru/', 'https://www.politico.com/','https://ixbt.games/news/']
 news_scraper = NewsScraper(urls)
-news_scraper.loop_scraping(900) 
+if __name__ == "__main__":
+    news_scraper.loop_scraping(1800)
