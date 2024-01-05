@@ -67,8 +67,16 @@ func main() {
 	fmt.Print("Введите сообщение: ")
 	fmt.Scanln(&data)
 
-	fmt.Print("Введите номер узла-получателя: ")
-	fmt.Scanln(&recipient)
+	for {
+		fmt.Print("Введите номер узла-получателя: ")
+		fmt.Scanln(&recipient)
+
+		if recipient >= 0 && recipient < n {
+			break
+		}
+
+		fmt.Println("Номер узла-получателя вне диапазона. Попробуйте снова.")
+	}
 
 	fmt.Print("Введите время жизни токена (TTL): ")
 	fmt.Scanln(&ttl)
